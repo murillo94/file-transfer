@@ -1,6 +1,6 @@
 # file-transfer
 
-Exploring some communication, protocol between systems
+Exploring some communications, protocols between systems.
 
 ## Running it
 
