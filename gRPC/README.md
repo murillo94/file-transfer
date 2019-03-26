@@ -15,23 +15,9 @@ python3 -m pip install grpcio-tools
 
 And after
 
-- to run the server, go to server folder and type:
+- to run the server, go to server folder and type: `python capitalize_server.py`
 
-```
-python capitalize_server.py
-```
-
-- to run the client, go to client folder and type:
-
-```
-npm install
-```
-
-and
-
-```
-python capitalize_client.py
-```
+- to run the client, go to client folder and type: `npm install` and `python capitalize_client.py`
 
 ## Important
 
