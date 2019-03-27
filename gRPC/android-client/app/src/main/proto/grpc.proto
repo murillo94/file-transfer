@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.lucasmacielc.grpc";
+option java_outer_classname = "MessageProto";
+
+package rpc;
+
+message Payload {
+  int32 id = 1;
+  bytes data = 2;
+}
+
+service Fetch {
+  rpc Capitalize(Payload) returns (Payload) {}
+  }
