@@ -1,8 +1,7 @@
 # file-transfer
 
-## Running it locally
+Exploring some communications, protocols between systems.
 
-Open 2 terminal:
+## Running it
 
-- First terminal execute `python3 input.py`
-- Second terminal execute `node watch.js`
+Choose a folder and follow the instructions.
