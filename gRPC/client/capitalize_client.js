@@ -21,26 +21,28 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 
 const message_proto = grpc.loadPackageDefinition(packageDefinition).rpc;
 
-function main() {
+const prompt = value => {
+  rl.setPrompt(value, value.length);
+  rl.prompt();
+};
+
+const main = () => {
   const client = new message_proto.Fetch(
     'localhost:9778',
     grpc.credentials.createInsecure()
   );
 
-  rl.on('line', function(value) {
-    client.Capitalize({ data: [...Buffer(value)] }, function(err, response) {
+  rl.on('line', value => {
+    client.Capitalize({ data: [...Buffer(value)] }, (err, response) => {
       console.log(response.data.toString('utf8'));
-      rl.setPrompt(input, input.length);
-      rl.prompt();
+      prompt(input);
     });
-    rl.setPrompt(output, output.length);
-    rl.prompt();
-  }).on('close', function() {
+    prompt(output);
+  }).on('close', () => {
     process.exit(0);
   });
 
-  rl.setPrompt(input, input.length);
-  rl.prompt();
-}
+  prompt(input);
+};
 
 main();
